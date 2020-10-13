@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_form_inherit_woa_contacts" model="ir.ui.view">
+        <field name="name">view.partner.form.inherit.woa_contacts</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='function']" position="before">
+                <field name="health_insurance"/>
+                <field name="diagnosis"/>
+                <field name="contact_rel"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
