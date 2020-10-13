@@ -1,3 +1,3 @@
 # webinaroctubre
 Demo webinar odoo 
-Installation ist derzeit kaputt
+Installation am i5 ist derzeit kaputt
