@@ -1,0 +1,43 @@
+<odoo>
+   <!--    <data>-->
+
+<!--        <record id="object0" model="openacademy.openacademy">  -->
+
+        <record id="Kurs0" model="openacademy.kurs">
+            <field name="name">Kurs 0</field>
+            <field name="descrition">Kurs 0 Da kann viel drinnenstehen</field>
+        </record>
+        <!--  -->
+        <record id="Kurs1" model="openacademy.kurs">
+            <field name="name">Kurs 1</field>
+            <field name="description"> Da kann nix drinnenstehen</field>
+        </record>
+
+        <record id="Kurs2" model="openacademy.kurs">
+            <field name="name">Kurs 2</field>
+        </record>
+        <!--  -->
+        <!--  -->
+
+        <!--   <record id="object1" model="openacademy.openacademy"> -->
+        <!--     <field name="name">Object 1</field> -->
+        <!--     <field name="value">10</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object2" model="openacademy.openacademy"> -->
+        <!--     <field name="name">Object 2</field> -->
+        <!--     <field name="value">20</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object3" model="openacademy.openacademy"> -->
+        <!--     <field name="name">Object 3</field> -->
+        <!--     <field name="value">30</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object4" model="openacademy.openacademy"> -->
+        <!--     <field name="name">Object 4</field> -->
+        <!--     <field name="value">40</field> -->
+        <!--   </record> -->
+
+    <!-- </data>-->
+</odoo>

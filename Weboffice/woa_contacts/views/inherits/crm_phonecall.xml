@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="crm_case_inbound_phone_tree_inherit_view" model="ir.ui.view">
+        <field name="name">crm.case.inbound.phone.tree.view</field>
+        <field name="model">crm.phonecall</field>
+        <field name="inherit_id" ref="crm_phonecall.crm_case_inbound_phone_tree_view"/>
+        <field name="arch" type="xml">
+           <xpath expr="//field[@name='source_id']" position="after">
+                    <field name="sale_order_ids" widget="one2many_tag"/>
+            <!--        <field name=" "/>  -->
+           </xpath>
+        </field>
+    </record>
+
+</odoo>

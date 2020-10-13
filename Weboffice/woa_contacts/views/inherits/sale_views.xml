@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_sale_form_inherit_woa_contacts" model="ir.ui.view">
+        <field name="name">view.sale.form.inherit.woa_contacts</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='require_payment']" position="after">
+                <field name="require_dataprotection"/>
+                <field name="require_fundingrequest"/>
+            <!--    <field name="payer_id" attrs="{'invisible':[ 'require_fundingrequest', '!=', 'True' ]}"/> -->
+                <field name="payer_ids" widget="many2many" attrs="{'invisible': [('require_fundingrequest', '=', False)] }">
+                   <tree>
+                      <field name="name"/>
+                      <field name="city"/>
+                   </tree>
+                </field>
+
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_sale_form_tel_inherit_woa_contacts" model="ir.ui.view">
+        <field name="name">view.sale.form.tel.inherit.woa_contacts</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_information']" position="after">
+                <page name="Telephone" string="Telephone notes">
+                  <group>
+                    <field name="caller_ids" widget="one2many">
+                         <tree>
+                         <!--  <field name="caller_ids"/> -->
+                            <field name="partner_id"/>
+                         <!--   <field name="campaign_id"/>
+                             <field name="company_id"/>
+                            <field name="duration"/><field name="source_id"/><field name="opportunity_id"/>-->
+                            <field name="create_date"/>
+                            <field name="name"/>
+                        </tree>
+                      </field>
+                    </group>
+                </page>
+
+                <page name="visitprotocol" string="Visit Protocol">
+                    <group>
+                         <field name="protnotes"/>
+                         <field name="start_date"/>
+                    </group>
+                </page>
+                <page name="insurance" string="Insurance Additional">
+                    <group>
+                         <field name="partner_id"/>
+                    </group>
+       <!--             <tree string="Additional Payers" create="false">
+                        <field name="payer_id"/>
+                    </tree>  -->
+                </page>
+      <!--      <xpath expr="//field[@name='require_signature']" position="after"> -->
+            </xpath>
+        </field>
+
+    </record>
+
+     <record id="view_crm_case_form_view_oppor_inherit_woa_contacts" model="ir.ui.view">
+        <field name="name">view.crm.case.form.view.oppor.inherit.woa_contacts</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='lead']" position="after">
+                <page name="Telephone" string="Telephone notes">
+                  <group>
+                    <field name="caller2_ids" widget="one2many">
+                         <tree>
+                            <field name="partner_id"/>
+                            <field name="create_date"/>
+                            <field name="name"/>
+                        </tree>
+                      </field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+     </record>
+
+
+</odoo>
+
+
